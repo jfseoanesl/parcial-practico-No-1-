@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Restaurante">
+  <ClassDiagramComponents>
+    <Class name="JornadaLaboral" package="" visibility="public" xPosition="162.0" yPosition="78.0">
+      <Fields>
+        <Field name="N_MAX_MESEROS" type="int" visibility="private" isFinal="true"/>
+        <Field name="LIMITE_PEDIDOS" type="int" visibility="private" isFinal="true"/>
+        <Field name="propina" type="double" visibility="private"/>
+        <Field name="fecha" type="Date" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Mesero" package="" visibility="public" xPosition="614.0" yPosition="78.0">
+      <Fields>
+        <Field name="id" type="int" visibility="private"/>
+        <Field name="nombre" type="String" visibility="private"/>
+        <Field name="apellido" type="String" visibility="private"/>
+        <Field name="edad" type="int" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Pedido" package="" visibility="public" xPosition="391.0" yPosition="396.0">
+      <Fields>
+        <Field name="id" type="int" visibility="private"/>
+        <Field name="nMesa" type="int" visibility="private"/>
+        <Field name="descripcion" type="String" visibility="private"/>
+        <Field name="costo" type="double" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="contrata" source="JornadaLaboral" target="Mesero" type="Aggregation" sourceCardinality="0..1" targetCardinality="1..*" collectionType="List"/>
+    <HasRelation name="registra" source="JornadaLaboral" target="Pedido" type="Composition" sourceCardinality="0..1" targetCardinality="1..*" collectionType="List"/>
+    <HasRelation name="mesero" source="Pedido" target="Mesero" type="Aggregation" sourceCardinality="0..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
